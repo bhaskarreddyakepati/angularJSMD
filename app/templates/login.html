@@ -1,0 +1,58 @@
+
+<md-list>
+    <md-list-item class="md-1-line">
+        <md-content layout-padding>
+        <form name="userForm">
+            <md-input-container>
+                <label>User Name</label>
+                <input name="userName" ng-model="userName" required md-maxlength="20">
+                <div ng-messages="userForm.userName.$error" ng-show="userForm.userName.$dirty">
+                    <div ng-message="required">This is required!</div>
+                    <div ng-message="md-maxlength">That's too long!</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Password</label>
+                <input name="password" ng-model="password" required md-maxlength="40">
+                <div ng-messages="userForm.password.$error" ng-show="userForm.password.$dirty">
+                    <div ng-message="required">This is required!</div>
+                    <div ng-message="md-maxlength">That's too long!</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <md-button class="md-raised md-primary" type="submit" ng-disabled="userForm.$invalid" ng-click="login()"> Login</md-button>
+            </md-input-container>
+        </form>
+        </md-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item class="md-1-line" ng-show="userForm.$submitted && !userForm.$invalid">
+        <md-content layout-padding>
+            <h5>Response:</h5>
+            <h5 ng-show="!loginResponse.FirstName && !loginResponse.Message">Fetching Data..</h5>
+            <table class="table table-bordered">
+                <tr ng-show="loginResponse.FirstName">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Role Id</th>
+                    <th>Role Name</th>
+                    <th>CallCenter Id</th>
+                    <th>Auth Token</th>
+                </tr>
+
+                <tr ng-show="loginResponse.FirstName" >
+                    <td>{{ loginResponse.FirstName }}</td>
+                    <td>{{ loginResponse.LastName }}</td>
+                    <td>{{ loginResponse.RoleId }}</td>
+                    <td>{{ loginResponse.RoleName }}</td>
+                    <td>{{ loginResponse.CallCenterId }}</td>
+                    <td>{{ loginResponse.AuthToken }}</td>
+                </tr>
+                <tr ng-show="loginResponse.Message" style="color:red">
+                    <td>{{ loginResponse.Message }}</td>
+                </tr>
+            </table>
+        </md-content>
+    </md-list-item>
+
+</md-list>

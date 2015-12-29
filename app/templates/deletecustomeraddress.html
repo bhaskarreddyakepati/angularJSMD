@@ -1,0 +1,44 @@
+
+<md-list>
+    <md-list-item class="md-1-line">
+        <md-content layout-padding>
+            <form name="customeraddresssForm">
+                <md-input-container>
+                    <label>Address Id</label>
+                    <input name="addressid" ng-model="addressid" required md-maxlength="10" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customeraddresssForm.addressid.$error" ng-show="customeraddresssForm.addressid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Only numbers are allowed</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Customer Id</label>
+                    <input name="customerid" ng-model="customerid" required md-maxlength="10" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customeraddresssForm.customerid.$error" ng-show="customeraddresssForm.customerid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Only numbers are allowed</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="customeraddresssForm.$invalid" ng-click="createCustomerAddress('delete')"> Delete</md-button>
+                </md-input-container>
+            </form>
+        </md-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item class="md-1-line" ng-show="customeraddresssForm.$submitted && !customeraddresssForm.$invalid">
+        <md-content layout-padding>
+            <h5>Response:</h5>
+            <pre>{{loginResponse | json}}</pre>
+            <table class="table table-bordered">
+                <tr ng-show="loginResponse.Message" style="color:red">
+                    <td>{{ loginResponse.Message }}</td>
+                </tr>
+            </table>
+        </md-content>
+    </md-list-item>
+
+</md-list>

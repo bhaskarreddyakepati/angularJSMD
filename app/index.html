@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+ <html lang="en" ng-app="loginApp">
+  <meta charset="utf-8">
+  <title>API Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/login.css">
+
+</head>
+<body layout="column" ng-controller="HomeController">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="controllers/app.js"></script>
+
+<md-toolbar layout="row">
+  <md-button class="menu" hide-gt-sm ng-click="toggleList()" aria-label="Show User List">
+    <md-icon md-svg-src="assets/menu.svg"></md-icon>
+  </md-button>
+  <h1>Tillster API Test</h1>
+</md-toolbar>
+
+<!-- Container #2 -->
+<div flex layout="row">
+
+  <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+    <md-list>
+      <md-list-item class="md-1-line sidenavapp">
+        <div class="md-list-item-text" layout="column">
+          <a href="#/loginAgent">Login Agent</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/restaurantDNIS">Get Restaurants by DNS</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/customerANI">Get Customers By ANI</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/createcustomer">Create Customer</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/updatecustomer">Update Customer</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/deletecustomer">Delete Customer</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/createcustomeraddress">Create Customer Address</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/updatecustomeraddress">Update Customer Address</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item class="md-1-line sidenavapp" >
+        <div class="md-list-item-text" layout="column">
+          <a href="#/deletecustomeraddress">Delete Customer Address</a>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+
+    </md-list>
+  </md-sidenav>
+
+  <md-content flex id="content">
+    <div ng-view></div>
+  </md-content>
+
+</div>
+
+</body>
+</html>

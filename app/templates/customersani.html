@@ -1,0 +1,33 @@
+
+<md-list>
+    <md-list-item class="md-1-line">
+        <md-content layout-padding>
+            <form name="customerForm">
+                <md-input-container>
+                    <label>ani</label>
+                    <input name="ani" ng-model="ani" required md-maxlength="20">
+                    <div ng-messages="customerForm.ani.$error" ng-show="customerForm.ani.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="customerForm.$invalid" ng-click="customersByANI()"> Submit</md-button>
+                </md-input-container>
+            </form>
+        </md-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item class="md-1-line" ng-show="customerForm.$submitted && !customerForm.$invalid">
+        <md-content layout-padding>
+            <h5>Response:</h5>
+            <pre>{{loginResponse | json}}</pre>
+            <table class="table table-bordered">
+                <tr ng-show="loginResponse.Message" style="color:red">
+                    <td>{{ loginResponse.Message }}</td>
+                </tr>
+            </table>
+        </md-content>
+    </md-list-item>
+
+</md-list>

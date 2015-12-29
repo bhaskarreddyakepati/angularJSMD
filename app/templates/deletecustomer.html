@@ -1,0 +1,35 @@
+
+<md-list>
+    <md-list-item class="md-1-line">
+        <md-content layout-padding>
+            <form name="customerForm">
+                <md-input-container>
+                    <label>Customer Id</label>
+                    <input name="customerid" ng-model="customerid" required md-maxlength="20" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customerForm.customerid.$error" ng-show="customerForm.customerid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Only numbers are allowed</div>
+                    </div>
+                </md-input-container>
+                </md-input-container>
+                <md-input-container>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="customerForm.$invalid" ng-click="createCustomer('delete')"> Delete</md-button>
+                </md-input-container>
+            </form>
+        </md-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item class="md-1-line" ng-show="customerForm.$submitted && !customerForm.$invalid">
+        <md-content layout-padding>
+            <h5>Response:</h5>
+            <pre>{{loginResponse | json}}</pre>
+            <table class="table table-bordered">
+                <tr ng-show="loginResponse.Message" style="color:red">
+                    <td>{{ loginResponse.Message }}</td>
+                </tr>
+            </table>
+        </md-content>
+    </md-list-item>
+
+</md-list>

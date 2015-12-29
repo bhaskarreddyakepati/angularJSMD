@@ -1,0 +1,63 @@
+
+<md-list>
+    <md-list-item class="md-1-line">
+        <md-content layout-padding>
+            <form name="customerForm">
+                <md-input-container>
+                    <label>First Name</label>
+                    <input name="firstName" ng-model="firstName" required md-maxlength="20">
+                    <div ng-messages="customerForm.firstName.$error" ng-show="customerForm.firstName.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Last Name</label>
+                    <input name="lastName" ng-model="lastName" required md-maxlength="20">
+                    <div ng-messages="customerForm.lastName.$error" ng-show="customerForm.lastName.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Email</label>
+                    <input name="customeremail" type="email" ng-pattern="/^.+@.+\..+$/" ng-model="customeremail" required md-maxlength="50">
+                    <div ng-messages="customerForm.customeremail.$error" ng-show="customerForm.customeremail.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Please enter valid email</div>
+                        <!--<div ng-message-exp="['required','maxlength', 'pattern']">
+                            Your email must be maximum of 50 characters long and look like an e-mail address.
+                        </div>-->
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Phone</label>
+                    <input name="phone" ng-model="phone" required minlength="10" md-maxlength="10" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customerForm.phone.$error" ng-show="customerForm.phone.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="minlength">Must be 10 digits</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Please enter a valid phone number.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="customerForm.$invalid" ng-click="createCustomer('add')"> Create</md-button>
+                </md-input-container>
+            </form>
+        </md-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item class="md-1-line" ng-show="customerForm.$submitted && !customerForm.$invalid">
+        <md-content layout-padding>
+            <h5>Response:</h5>
+            <pre>{{loginResponse | json}}</pre>
+            <table class="table table-bordered">
+                <tr ng-show="loginResponse.Message" style="color:red">
+                    <td>{{ loginResponse.Message }}</td>
+                </tr>
+            </table>
+        </md-content>
+    </md-list-item>
+
+</md-list>

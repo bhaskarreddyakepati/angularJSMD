@@ -1,0 +1,15 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.inputdemoErrors .inputErrorsApp {
+    min-height: 48px; }
+
+a:link {
+    text-decoration: none;
+}
+
+.selected{
+    background-color: bisque;
+}

@@ -1,0 +1,41 @@
+
+<md-list>
+    <md-list-item class="md-1-line">
+        <md-content layout-padding>
+            <form name="restaurantForm">
+                <md-input-container>
+                    <label>Call Center Id</label>
+                    <input name="callCenterId" ng-model="callCenterId" required md-maxlength="20">
+                    <div ng-messages="restaurantForm.callCenterId.$error" ng-show="restaurantForm.callCenterId.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>DNIS</label>
+                    <input name="dnis" ng-model="dnis" required md-maxlength="20">
+                    <div ng-messages="restaurantForm.dnis.$error" ng-show="restaurantForm.dnis.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="restaurantForm.$invalid" ng-click="submit()"> Submit</md-button>
+                </md-input-container>
+            </form>
+        </md-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item class="md-1-line" ng-show="restaurantForm.$submitted && !restaurantForm.$invalid">
+        <md-content layout-padding>
+            <h5>Response:</h5>
+            <pre>{{loginResponse | json}}</pre>
+            <table class="table table-bordered">
+                <tr ng-show="loginResponse.Message" style="color:red">
+                    <td>{{ loginResponse.Message }}</td>
+                </tr>
+            </table>
+        </md-content>
+    </md-list-item>
+
+</md-list>

@@ -1,0 +1,174 @@
+
+<md-list>
+    <md-list-item class="md-1-line">
+        <md-content layout-padding>
+            <form name="customeraddresssForm">
+                <md-input-container>
+                    <label>Address Id</label>
+                    <input name="addressid" ng-model="addressid" required md-maxlength="10" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customeraddresssForm.addressid.$error" ng-show="customeraddresssForm.addressid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Only numbers are allowed</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Address1</label>
+                    <input name="address1" ng-model="address1" required md-maxlength="50">
+                    <div ng-messages="customeraddresssForm.address1.$error" ng-show="customeraddresssForm.address1.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Address2</label>
+                    <input name="address2" ng-model="address2" md-maxlength="50">
+                    <div ng-messages="customeraddresssForm.address2.$error" ng-show="customeraddresssForm.address2.$dirty">
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Address3</label>
+                    <input name="address3" ng-model="address3"  md-maxlength="50">
+                    <div ng-messages="customeraddresssForm.address3.$error" ng-show="customeraddresssForm.address3.$dirty">
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Postal Code</label>
+                    <input name="postalcode" ng-model="postalcode" required md-maxlength="5">
+                    <div ng-messages="customeraddresssForm.postalcode.$error" ng-show="customeraddresssForm.postalcode.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Customer Id</label>
+                    <input name="customerid" ng-model="customerid" required md-maxlength="10" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customeraddresssForm.customerid.$error" ng-show="customeraddresssForm.customerid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Only numbers are allowed</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>City</label>
+                    <input name="city" ng-model="city" required md-maxlength="25">
+                    <div ng-messages="customeraddresssForm.city.$error" ng-show="customeraddresssForm.city.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Phone1</label>
+                    <input name="phone1" ng-model="phone1" required minlength="10" md-maxlength="10" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customeraddresssForm.phone1.$error" ng-show="customeraddresssForm.phone1.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="minlength">Must be 10 digits</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Please enter a valid phone number.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Phone2</label>
+                    <input name="phone2" ng-model="phone2" md-maxlength="10" ng-pattern="/^[0-9]/">
+                    <div ng-messages="customeraddresssForm.phone2.$error" ng-show="customeraddresssForm.phone2.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="minlength">Must be 10 digits</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                        <div ng-message="pattern">Please enter a valid phone number.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Name</label>
+                    <input name="name" ng-model="name" required md-maxlength="40">
+                    <div ng-messages="customeraddresssForm.name.$error" ng-show="customeraddresssForm.name.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>State Id</label>
+                    <input name="stateid" ng-model="stateid" required md-maxlength="5">
+                    <div ng-messages="customeraddresssForm.stateid.$error" ng-show="customeraddresssForm.stateid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>State Code</label>
+                    <input name="statecode" ng-model="statecode" required md-maxlength="10">
+                    <div ng-messages="customeraddresssForm.statecode.$error" ng-show="customeraddresssForm.statecode.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>State Name</label>
+                    <input name="statename" ng-model="statename" required md-maxlength="20">
+                    <div ng-messages="customeraddresssForm.statename.$error" ng-show="customeraddresssForm.statename.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Country Id</label>
+                    <input name="countryid" ng-model="countryid" required md-maxlength="5">
+                    <div ng-messages="customeraddresssForm.countryid.$error" ng-show="customeraddresssForm.countryid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Country Code</label>
+                    <input name="countrycode" ng-model="countrycode" required md-maxlength="10">
+                    <div ng-messages="customeraddresssForm.countrycode.$error" ng-show="customeraddresssForm.countrycode.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Country Name</label>
+                    <input name="countryname" ng-model="countryname" required md-maxlength="20">
+                    <div ng-messages="customeraddresssForm.statename.$error" ng-show="customeraddresssForm.statename.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>AdressType Id</label>
+                    <input name="addresstypeid" ng-model="addresstypeid" required md-maxlength="5">
+                    <div ng-messages="customeraddresssForm.addresstypeid.$error" ng-show="customeraddresssForm.addresstypeid.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>AddressType Name</label>
+                    <input name="addresstypename" ng-model="addresstypename" required md-maxlength="10">
+                    <div ng-messages="customeraddresssForm.addresstypename.$error" ng-show="customeraddresssForm.addresstypename.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="customeraddresssForm.$invalid" ng-click="createCustomerAddress('update')"> Update</md-button>
+                </md-input-container>
+            </form>
+        </md-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item class="md-1-line" ng-show="customeraddresssForm.$submitted && !customeraddresssForm.$invalid">
+        <md-content layout-padding>
+            <h5>Response:</h5>
+            <pre>{{loginResponse | json}}</pre>
+            <table class="table table-bordered">
+                <tr ng-show="loginResponse.Message" style="color:red">
+                    <td>{{ loginResponse.Message }}</td>
+                </tr>
+            </table>
+        </md-content>
+    </md-list-item>
+
+</md-list>
